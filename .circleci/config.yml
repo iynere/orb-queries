@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  output-partners:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run: echo "$ORB_PARTNERS" > data/partner-orbs/partners.txt
+      - run: node query-partner-orbs-prod.js
+
+      - store_artifacts:
+          path: data/partner-orbs/parter-orbs.csv
+
+workflows:
+  version: 2
+  query-partners:
+    jobs:
+      - output-partners:
+          context: orbs
