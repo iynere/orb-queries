@@ -5,7 +5,10 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run: echo "$ORB_PARTNERS" > project/data/partner-orbs/partners.txt
+      - run: |
+          mkdir project/data/partner-orbs
+          echo "$ORB_PARTNERS" > project/data/partner-orbs/partners.txt
+
       - run: node query-partner-orbs-prod.js
 
       - store_artifacts:
