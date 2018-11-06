@@ -7,8 +7,8 @@ jobs:
       - checkout
       - run: sudo curl -fLSs https://circle.ci/cli | sudo bash
       - run: |
-          mkdir -p project/data/partner-orbs
-          echo "$ORB_PARTNERS" > project/data/partner-orbs/partners.txt
+          mkdir -p data/partner-orbs
+          echo "$ORB_PARTNERS" > data/partner-orbs/partners.txt
 
       - run: node query-partner-orbs-prod.js
 
