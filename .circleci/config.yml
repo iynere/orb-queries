@@ -5,6 +5,7 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
+      - run: circleci update
       - run: |
           mkdir -p project/data/partner-orbs
           echo "$ORB_PARTNERS" > project/data/partner-orbs/partners.txt
