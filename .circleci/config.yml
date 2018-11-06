@@ -13,7 +13,7 @@ jobs:
       - run: node query-partner-orbs-prod.js
 
       - store_artifacts:
-          path: data/partner-orbs/parter-orbs.csv
+          path: data/partner-orbs
 
 workflows:
   version: 2
